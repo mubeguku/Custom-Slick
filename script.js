@@ -319,17 +319,7 @@
                     targetLeft = (targetLeft + 100);
                 }
 
-                //console.log('cxl-debug-current', _.currentSlide);
-                //console.log('cxl-debug-next', _.nextSlide);
-                //console.log('cxl-debug', _);
-                //console.log('cxl-debug-touch', _.touchObject);
-                //console.log('cxl-debug-touch-x', _.touchObject.startX);
-                //console.log('cxl-debug', _.currentDirection);
-                console.log('cxl-debug-last-target', _.lastTargetLeft);
-                console.log('cxl-debug-target', targetLeft);
-
-                if (_.lastTargetLeft > targetLeft) {
-                } else {
+                if (_.lastTargetLeft < targetLeft) {
                     if ((_.slideCount - _.currentSlide) === 2) {
                         targetLeft = (targetLeft - 100);
                     }
