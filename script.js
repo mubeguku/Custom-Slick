@@ -315,13 +315,17 @@
 
                 targetLeft = Math.ceil(targetLeft);
 
-                if ((_.slideCount -_.currentSlide) === 1) {
-                    targetLeft = (targetLeft + 100);
+                var slickListInnerWidth = _.$slider.find('.slick-list').width();
+                var slickListOuterWidth = _.$slider.find('.slick-list').outerWidth();
+                var offset = (slickListOuterWidth - slickListInnerWidth);
+
+                if ((_.slideCount - _.currentSlide) === 1) {
+                    targetLeft = (targetLeft + offset);
                 }
 
                 if (_.lastTargetLeft < targetLeft) {
                     if ((_.slideCount - _.currentSlide) === 2) {
-                        targetLeft = (targetLeft - 100);
+                        targetLeft = (targetLeft - offset);
                     }
                 }
 
@@ -1166,8 +1170,12 @@
         if (_.options.vertical === false) {
             targetLeft = ((slideIndex * _.slideWidth) * -1) + _.slideOffset;
 
+            var slickListInnerWidth = _.$slider.find('.slick-list').width();
+            var slickListOuterWidth = _.$slider.find('.slick-list').outerWidth();
+            var offset = (slickListOuterWidth - slickListInnerWidth);
+
             if ((_.slideCount -_.currentSlide) === 1) {
-                targetLeft = (targetLeft + 100);
+                targetLeft = (targetLeft + offset);
             }
         } else {
             targetLeft = ((slideIndex * verticalHeight) * -1) + verticalOffset;
